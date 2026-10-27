@@ -73,6 +73,13 @@ a {
   letter-spacing: 2px;
   animation: parpadeo 2s;
 }
+.titulo-seccion, .titulo-centro {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+.titulo-centro {
+  text-align: center;
+}
 @keyframes parpadeo {
   0% { opacity: 1; }
   30% { opacity: 0.2; }
@@ -108,6 +115,18 @@ a {
   border: 2px solid #e1202b;
   border-radius: 8px;
 }
+.foto-galeria {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border: 2px solid #e1202b;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.foto-galeria:hover {
+  transform: scale(1.05);
+}
 
 @media (min-width: 768px) {
   .menu {
@@ -129,9 +148,13 @@ a {
      font-size: 4rem;
      }
      
- .titulo-seccion { 
-    font-size: 2.2rem;
- }
+   .titulo-seccion, .titulo-centro { 
+    font-size: 2.2rem; 
+}
+  .foto-galeria {
+     height: 190px; 
+    }
+    
   .foto-portada {
      height: 300px;
      }
