@@ -91,8 +91,11 @@ a {
 .row > div {
   padding-bottom: 12px;
 }
-.seccion {
+.seccion, .seccion-azul {
   padding: 35px 0;
+}
+.seccion-azul {
+  background-color: #1b2a41;
 }
 .titulo-seccion {
   margin-bottom: 15px;
@@ -154,8 +157,25 @@ a {
   .foto-galeria {
      height: 190px; 
     }
-    
+
   .foto-portada {
      height: 300px;
      }
+  .tarjeta {
+  height: 100%;
+  padding: 15px;
+  background-color: #0b0b12;
+  border: 1px solid #2c3d5a;
+  border-top: 4px solid #e1202b;
+  border-radius: 6px;
+}
+.tarjeta:hover {
+  box-shadow: 0 0 18px #e1202b;
+}
+.tarjeta h3 {
+  font-size: 1.05rem;
+}
+.tarjeta p {
+  font-size: 0.9rem;
+} 
 } 
