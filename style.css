@@ -53,6 +53,34 @@ a {
   color: #e1202b;
 }
 
+.portada {
+  padding: 20px 10px;
+  text-align: center;
+  background-image: linear-gradient(rgba(11, 11, 18, 0.6), rgba(11, 11, 18, 0.9)), url("img/portada.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.fecha {
+  margin: 0;
+  font-family: "Special Elite", monospace;
+  font-size: 0.85rem;
+  color: #f2b134;
+}
+.titulo {
+  margin: 3px 0 10px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  animation: parpadeo 2s;
+}
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  30% { opacity: 0.2; }
+  60% { opacity: 1; }
+  80% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
 @media (min-width: 768px) {
   .menu {
      flex-direction: row;
@@ -65,5 +93,11 @@ a {
   .enlaces a {
      padding: 8px 14px;
       font-size: 1rem;
+     }
+      .portada { 
+        padding: 40px 10px; 
+    }
+  .titulo {
+     font-size: 4rem;
      }
 }
