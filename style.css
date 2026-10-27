@@ -130,7 +130,72 @@ a {
 .foto-galeria:hover {
   transform: scale(1.05);
 }
-
+.solo-pc {
+  display: none;
+}
+.formulario-luces {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.caja {
+  width: 100%;
+  padding: 8px 10px;
+  background-color: #0b0b12;
+  color: #f2f2f2;
+  border: 2px solid #1b2a41;
+  border-radius: 6px;
+}
+.caja:focus {
+  outline: none;
+  border-color: #e1202b;
+}
+.formulario-luces .caja {
+  width: 70%;
+  text-transform: uppercase;
+}
+.respuesta {
+  min-height: 22px;
+  margin: 5px 0 0;
+  font-family: "Special Elite", monospace;
+  font-size: 0.85rem;
+}
+.error {
+  color: #ff6b73;
+}
+.boton-rojo, .boton-rapido {
+  padding: 7px 16px;
+  border: 2px solid #e1202b;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.boton-rojo {
+  background-color: #e1202b;
+  color: white;
+}
+.boton-rojo:hover {
+  background-color: #b8161f;
+}
+.boton-rapido {
+  background-color: transparent;
+  border-color: #1b2a41;
+  color: #f2f2f2;
+  font-family: "Special Elite", monospace;
+}
+.boton-rapido:hover {
+  border-color: #e1202b;
+  color: #e1202b;
+}
+.botones-rapidos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
 @media (min-width: 768px) {
   .menu {
      flex-direction: row;
@@ -178,4 +243,7 @@ a {
 .tarjeta p {
   font-size: 0.9rem;
 } 
+  .solo-pc {
+     display: block; 
+    }
 } 
