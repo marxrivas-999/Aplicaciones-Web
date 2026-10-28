@@ -532,6 +532,21 @@ a {
 .lugar:hover .texto-lugar p {
   display: block;
 }
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.etiqueta {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.opcion {
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: 400;
+}
+
 
 /*responsivo xd*/
 @media (min-width: 768px) {

@@ -41,7 +41,98 @@
     <span class="rosa"></span>
   </div>
   <main>
-    <h1>Club</h1>
+        <section class="encabezado">
+      <h1 class="titulo">Club Hellfire</h1>
+      <p>Llena el formulario y consigue tu carnet de fan.</p>
+    </section>
+
+    <section class="seccion">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="titulo-seccion">Registro de fans</h2>
+            <form id="formulario-club">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" class="caja" placeholder="Ej. Dustin Henderson" required minlength="3">
+                  <p id="error-nombre" class="error"></p>
+                </div>
+                <div class="col-md-6">
+                  <label for="correo">Correo electrónico</label>
+                  <input type="email" id="correo" class="caja" placeholder="tucorreo@ejemplo.com" required>
+                  <p id="error-correo" class="error"></p>
+                </div>
+                <div class="col-md-6">
+                  <label for="edad">Edad</label>
+                  <input type="number" id="edad" class="caja" min="10" max="99" placeholder="10 a 99" required>
+                  <p id="error-edad" class="error"></p>
+                </div>
+                <div class="col-md-6">
+                  <label for="personaje">Personaje favorito</label>
+                  <select id="personaje" class="caja" required>
+                    <option value="">Elige uno...</option>
+                    <option value="mike">Mike Wheeler</option>
+                    <option value="eleven">Eleven</option>
+                    <option value="dustin">Dustin Henderson</option>
+                    <option value="lucas">Lucas Sinclair</option>
+                    <option value="will">Will Byers</option>
+                    <option value="max">Max Mayfield</option>
+                    <option value="holly">Holly Wheeler</option>
+                    <option value="erica">Erica Sinclair</option>
+                    <option value="nancy">Nancy Wheeler</option>
+                    <option value="jonathan">Jonathan Byers</option>
+                    <option value="steve">Steve Harrington</option>
+                    <option value="robin">Robin Buckley</option>
+                    <option value="eddie">Eddie Munson</option>
+                    <option value="hopper">Jim Hopper</option>
+                    <option value="joyce">Joyce Byers</option>
+                    <option value="murray">Murray Bauman</option>
+                    <option value="vecna">Vecna</option>
+                    <option value="mindflayer">Mind Flayer</option>
+                    <option value="demogorgon">Demogorgon</option>
+                    <option value="brenner">Dr. Brenner</option>
+                    <option value="kay">Dra. Kay</option>
+                  </select>
+                  <p id="error-personaje" class="error"></p>
+                </div>
+                <div class="col-md-6">
+                  <label for="temporada">Temporada favorita</label>
+                  <select id="temporada" class="caja" required>
+                    <option value="">Elige una...</option>
+                    <option value="Temporada 1">Temporada 1</option>
+                    <option value="Temporada 2">Temporada 2</option>
+                    <option value="Temporada 3">Temporada 3</option>
+                    <option value="Temporada 4">Temporada 4</option>
+                    <option value="Temporada 5">Temporada 5</option>
+                  </select>
+                  <p id="error-temporada" class="error"></p>
+                </div>
+                <div class="col-md-6">
+                  <p class="etiqueta">Lo que más me gusta</p>
+                  <label class="opcion"><input type="checkbox" name="gustos" value="Misterio"> Misterio</label>
+                  <label class="opcion"><input type="checkbox" name="gustos" value="Monstruos"> Monstruos</label>
+                  <label class="opcion"><input type="checkbox" name="gustos" value="Música de los 80"> Música de los 80</label>
+                  <label class="opcion"><input type="checkbox" name="gustos" value="Amistad"> Amistad</label>
+                </div>
+                <div>
+                  <label for="opinion">¿Por qué te gusta la serie?</label>
+                  <textarea id="opinion" class="caja" rows="3" placeholder="Cuéntanos en pocas palabras" required minlength="10"></textarea>
+                  <p id="error-opinion" class="error"></p>
+                </div>
+                <div>
+                  <label class="opcion"><input type="checkbox" id="reglas" required> Acepto las reglas del club: respetar a los demás fans y no hacer spoilers.</label>
+                  <p id="error-reglas" class="error"></p>
+                </div>
+                <div>
+                  <button type="submit" class="boton-rojo">Unirme al club</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="pie">
