@@ -627,7 +627,19 @@ label {
 .mundo p {
      font-size: 0.85rem; }
 .foto-mundo {
-     aspect-ratio: 16 / 9; }     
+     aspect-ratio: 16 / 9; }    
+.caja { 
+    padding: 6px 8px; }
+label { 
+    margin-bottom: 2px; font-size: 0.85rem; }
+#formulario-club .error {
+     margin: 0 0 6px; font-size: 0.8rem; }
+.vista {
+     width: 70px; height: 70px; }
+.carnet button {
+     margin-top: 10px; }      
+
+
 
 /*responsivo xd*/
 @media (min-width: 768px) {
@@ -719,4 +731,10 @@ label {
     font-size: 1rem; }
   .foto-mundo { 
     aspect-ratio: 4 / 3; } 
+     .caja {
+         padding: 8px 10px; }
+  label {
+     margin-bottom: 4px; font-size: 1rem; }
+  .vista { 
+    width: 90px; height: 90px; }
 } 

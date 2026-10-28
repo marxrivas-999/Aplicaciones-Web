@@ -63,10 +63,22 @@
                   <input type="email" id="correo" class="caja" placeholder="tucorreo@ejemplo.com" required>
                   <p id="error-correo" class="error"></p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-6">
                   <label for="edad">Edad</label>
                   <input type="number" id="edad" class="caja" min="10" max="99" placeholder="10 a 99" required>
                   <p id="error-edad" class="error"></p>
+                </div>
+                <div class="col-6">
+                  <label for="temporada">Temporada favorita</label>
+                  <select id="temporada" class="caja" required>
+                    <option value="">Elige una...</option>
+                    <option value="Temporada 1">Temporada 1</option>
+                    <option value="Temporada 2">Temporada 2</option>
+                    <option value="Temporada 3">Temporada 3</option>
+                    <option value="Temporada 4">Temporada 4</option>
+                    <option value="Temporada 5">Temporada 5</option>
+                  </select>
+                  <p id="error-temporada" class="error"></p>
                 </div>
                 <div class="col-md-6">
                   <label for="personaje">Personaje favorito</label>
@@ -97,18 +109,7 @@
                    <img id="vista" class="vista oculto">
                   <p id="error-personaje" class="error"></p>
                 </div>
-                <div class="col-md-6">
-                  <label for="temporada">Temporada favorita</label>
-                  <select id="temporada" class="caja" required>
-                    <option value="">Elige una...</option>
-                    <option value="Temporada 1">Temporada 1</option>
-                    <option value="Temporada 2">Temporada 2</option>
-                    <option value="Temporada 3">Temporada 3</option>
-                    <option value="Temporada 4">Temporada 4</option>
-                    <option value="Temporada 5">Temporada 5</option>
-                  </select>
-                  <p id="error-temporada" class="error"></p>
-                </div>
+                
                 <div class="col-md-6">
                   <p class="etiqueta">Lo que más me gusta</p>
                   <label class="opcion"><input type="checkbox" name="gustos" value="Misterio"> Misterio</label>
@@ -118,7 +119,7 @@
                 </div>
                 <div>
                   <label for="opinion">¿Por qué te gusta la serie?</label>
-                  <textarea id="opinion" class="caja" rows="3" placeholder="Cuéntanos en pocas palabras" required minlength="10"></textarea>
+                  <textarea id="opinion" class="caja" rows="2" placeholder="Cuéntanos en pocas palabras" required minlength="10"></textarea>
                   <p id="error-opinion" class="error"></p>
                 </div>
                 <div>
