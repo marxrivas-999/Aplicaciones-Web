@@ -606,7 +606,24 @@ label {
 .tarjeta p {
      font-size: 0.9rem; 
     }
-
+.personaje img {
+     height: 150px; }
+.texto-personaje {
+     padding: 8px; }
+.texto-personaje h3 { 
+    font-size: 0.9rem; }
+.texto-personaje p {
+     font-size: 0.75rem; }
+.info-vecna { 
+    padding: 12px; }
+.info-vecna h3 {
+     font-size: 1.1rem; }
+.info-vecna p { 
+    font-size: 0.78rem; }
+.historia li {
+     margin-bottom: 6px; font-size: 0.76rem; }
+.foto-vecna {
+     height: 170px; }
 
 /*responsivo xd*/
 @media (min-width: 768px) {
@@ -670,4 +687,14 @@ label {
         height: 300px; }
       .lugar { 
         height: 210px; }    
+   .texto-personaje { 
+    padding: 10px; }
+  .info-vecna { 
+    padding: 15px; }
+  .info-vecna h3 {
+     font-size: 1.3rem; }
+  .info-vecna p { 
+    font-size: 1rem; }
+  .historia li {
+     margin-bottom: 10px; font-size: 0.9rem; }       
 } 
