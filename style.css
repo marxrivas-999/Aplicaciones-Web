@@ -94,6 +94,14 @@ a {
 .seccion, .seccion-azul, .seccion-villanos {
   padding: 35px 0;
 }
+.seccion-villanos {
+  background-image: linear-gradient(#0b0b12, #3a0a0f);
+}
+.aviso {
+  font-family: "Special Elite", monospace;
+  font-size: 0.85rem;
+  color: #f2b134;
+}
 .seccion-azul {
   background-color: #1b2a41;
 }
