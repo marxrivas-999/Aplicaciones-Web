@@ -584,6 +584,24 @@ label {
   border: 2px solid #e1202b;
   border-radius: 50%;
 }
+.tarjeta {
+  height: 100%;
+  padding: 15px;
+  background-color: #0b0b12;
+  border: 1px solid #2c3d5a;
+  border-top: 4px solid #e1202b;
+  border-radius: 6px;
+}
+.tarjeta:hover {
+     box-shadow: 0 0 18px #e1202b;
+     }
+.tarjeta h3 {
+     font-size: 1.05rem; 
+    }
+.tarjeta p {
+     font-size: 0.9rem; 
+    }
+
 
 /*responsivo xd*/
 @media (min-width: 768px) {
@@ -616,23 +634,7 @@ label {
   .foto-portada {
      height: 300px;
      }
-  .tarjeta {
-  height: 100%;
-  padding: 15px;
-  background-color: #0b0b12;
-  border: 1px solid #2c3d5a;
-  border-top: 4px solid #e1202b;
-  border-radius: 6px;
-}
-.tarjeta:hover {
-  box-shadow: 0 0 18px #e1202b;
-}
-.tarjeta h3 {
-  font-size: 1.05rem;
-}
-.tarjeta p {
-  font-size: 0.9rem;
-} 
+
   .solo-pc {
      display: block; 
     }
