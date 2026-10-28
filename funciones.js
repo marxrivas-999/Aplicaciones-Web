@@ -103,3 +103,75 @@ for (let i = 0; i < botonesMundo.length; i++) {
     document.querySelector("#" + id).classList.remove("oculto");
   });
 }
+
+const formularioClub = document.querySelector("#formulario-club");
+
+if (formularioClub) {
+  const nombre = document.querySelector("#nombre");
+  const correo = document.querySelector("#correo");
+  const edad = document.querySelector("#edad");
+  const personaje = document.querySelector("#personaje");
+  const temporada = document.querySelector("#temporada");
+  const opinion = document.querySelector("#opinion");
+  const reglas = document.querySelector("#reglas");
+
+  function revisar(campo, estaBien, textoError) {
+    const aviso = document.querySelector("#error-" + campo.id);
+    if (estaBien) {
+      campo.classList.remove("mal");
+      campo.classList.add("bien");
+      aviso.textContent = "";
+    } else {
+      campo.classList.remove("bien");
+      campo.classList.add("mal");
+      aviso.textContent = textoError;
+    }
+    return estaBien;
+  }
+
+  formularioClub.addEventListener("submit", function (e) {
+    e.preventDefault();  
+
+    let todoBien = true;
+    if (revisar(nombre, nombre.value.trim().length >= 3, "Escribe al menos 3 letras.") === false) { todoBien = false; }
+    if (revisar(correo, correo.value.includes("@") && correo.value.includes("."), "Escribe un correo válido.") === false) { todoBien = false; }
+    if (revisar(edad, edad.value >= 10 && edad.value <= 99, "La edad debe estar entre 10 y 99.") === false) { todoBien = false; }
+    if (revisar(personaje, personaje.value !== "", "Elige un personaje.") === false) { todoBien = false; }
+    if (revisar(temporada, temporada.value !== "", "Elige una temporada.") === false) { todoBien = false; }
+    if (revisar(opinion, opinion.value.trim().length >= 10, "Cuéntanos al menos 10 caracteres.") === false) { todoBien = false; }
+    if (revisar(reglas, reglas.checked, "Debes aceptar las reglas del club.") === false) { todoBien = false; }
+
+    if (todoBien === false) {
+      Swal.fire({
+        icon: "error",
+        title: "Revisa el formulario",
+        text: "Hay campos marcados en rojo.",
+        background: "#1b2a41",
+        color: "#f2f2f2",
+        confirmButtonColor: "#e1202b"
+      });
+      return;
+    }
+
+  
+
+
+
+
+
+    Swal.fire({
+      icon: "success",
+      title: "¡Bienvenido al Club Hellfire!",
+      text: nombre.value.trim() + ", ya eres parte del club.",
+      background: "#1b2a41",
+      color: "#f2f2f2",
+      confirmButtonColor: "#e1202b"
+    });
+
+    formularioClub.reset();
+    const verdes = document.querySelectorAll(".bien");
+    for (let i = 0; i < verdes.length; i++) {
+      verdes[i].classList.remove("bien");
+    }
+  });
+}

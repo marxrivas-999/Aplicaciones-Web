@@ -546,7 +546,12 @@ label {
   margin-right: 12px;
   font-weight: 400;
 }
-
+.caja.bien {
+  border-color: #3ecf6b;
+}
+.caja.mal {
+  border-color: #e1202b;
+}
 
 /*responsivo xd*/
 @media (min-width: 768px) {
