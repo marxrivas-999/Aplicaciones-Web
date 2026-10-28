@@ -1,6 +1,10 @@
 
 body {
   background-color: #0b0b12;
+  background-image: linear-gradient(rgba(11, 11, 18, 0.82), rgba(11, 11, 18, 0.92)), url("img/portada2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #f2f2f2;
   font-family: "Inter", sans-serif;
   line-height: 1.6;
