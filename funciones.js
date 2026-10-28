@@ -115,6 +115,16 @@ if (formularioClub) {
   const opinion = document.querySelector("#opinion");
   const reglas = document.querySelector("#reglas");
    const carnet = document.querySelector("#carnet");
+   const vista = document.querySelector("#vista");
+   
+  personaje.addEventListener("change", function () {
+    if (personaje.value === "") {
+      vista.classList.add("oculto");
+    } else {
+      vista.src = "img/" + personaje.value + ".jpg";
+      vista.classList.remove("oculto");
+    }
+  });  
 
   function revisar(campo, estaBien, textoError) {
     const aviso = document.querySelector("#error-" + campo.id);
