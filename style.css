@@ -386,6 +386,58 @@ a {
   margin-bottom: 10px;
   font-size: 0.9rem;
 }
+.temporada {
+  margin-bottom: 10px;
+  background-color: #0b0b12;
+  border: 1px solid #2c3d5a;
+  border-radius: 6px;
+}
+.temporada summary {
+  padding: 12px 15px;
+  background-color: #1b2a41;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+.temporada[open] summary {
+  background-color: #e1202b;
+}
+.contenido-temporada {
+  padding: 15px;
+}
+.poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border: 2px solid #e1202b;
+  border-radius: 8px;
+}
+.contenido-temporada .col-8 {
+  display: flex;
+  flex-direction: column;
+}
+.fotos-temporada {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  min-height: 110px;
+}
+.foto-escena {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border: 2px solid #e1202b;
+  border-radius: 8px;
+}
+.foto-escena img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /*responsivo xd*/
 @media (min-width: 768px) {
