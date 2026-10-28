@@ -292,7 +292,6 @@ a {
 .encabezado {
   padding: 20px 10px;
   text-align: center;
-  background-image: linear-gradient(rgba(11, 11, 18, 0.6), rgba(11, 11, 18, 0.9)), url("img/hawkins.jpg");
   background-size: cover;
   background-position: center;
 }
