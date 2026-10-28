@@ -620,6 +620,14 @@ label {
      margin-bottom: 6px; font-size: 0.76rem; }
 .foto-vecna {
      height: 170px; }
+.mundo { 
+    padding: 12px; }
+.mundo .row { 
+    flex-direction: column-reverse; }
+.mundo p {
+     font-size: 0.85rem; }
+.foto-mundo {
+     aspect-ratio: 16 / 9; }     
 
 /*responsivo xd*/
 @media (min-width: 768px) {
@@ -697,7 +705,18 @@ label {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto 1fr;
   }
-  .texto-temporada { grid-column: 2 / 4; }
-  .poster { grid-column: 1; grid-row: 1 / 3; width: 100%; margin: 0; }
-  .foto-escena { width: auto; max-width: none; height: auto; min-height: 110px; margin: 0; }    
+  .texto-temporada { 
+    grid-column: 2 / 4; }
+  .poster { 
+    grid-column: 1; grid-row: 1 / 3; width: 100%; margin: 0; }
+  .foto-escena {
+     width: auto; max-width: none; height: auto; min-height: 110px; margin: 0; }   
+    .mundo {
+         padding: 18px; }
+  .mundo .row {
+     flex-direction: row; }
+  .mundo p { 
+    font-size: 1rem; }
+  .foto-mundo { 
+    aspect-ratio: 4 / 3; } 
 } 
