@@ -223,6 +223,62 @@ a {
 .letra.prendida {
   color: #f2f2f2;
 }
+.luces {
+  display: flex;
+  justify-content: space-around;
+  border-top: 3px solid #3a3a44;
+  height: 30px;
+  overflow: hidden;
+}
+.luces span {
+  width: 12px;
+  height: 16px;
+  margin-top: 3px;
+  border-radius: 50%;
+  animation: brillar 2s infinite alternate;
+}
+.luces span:nth-child(even) {
+  animation-delay: 1s;
+}
+.rojo { 
+    background-color: #e1202b;
+ }
+.naranja { 
+    background-color: #ff7a1a; 
+}
+.amarillo {
+     background-color: #f2d334;
+     }
+.verde {
+     background-color: #3ddc84; 
+    }
+.azul {
+     background-color: #4aa3ff;
+     }
+.morado {
+     background-color: #b06cff;
+     }
+.rosa {
+     background-color: #ff5fa8;
+     }
+
+
+@keyframes brillar {
+  from { 
+    opacity: 0.5; }
+  to { 
+    opacity: 1; }
+}
+.pie {
+  padding: 12px 0;
+  background-color: #0b0b12;
+  border-top: 2px solid #e1202b;
+  font-size: 0.8rem;
+  color: #b8bfcc;
+}
+.pie p {
+  margin: 0;
+}
 
 
 @media (min-width: 768px) {
@@ -285,5 +341,8 @@ a {
   .foco {
      width: 14px; 
      height: 19px;
-     }    
+     }  
+  .pie { 
+    font-size: 0.95rem; 
+}       
 } 
