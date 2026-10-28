@@ -107,97 +107,203 @@ for (let i = 0; i < botonesMundo.length; i++) {
 const formularioClub = document.querySelector("#formulario-club");
 
 if (formularioClub) {
-  const nombre = document.querySelector("#nombre");
-  const correo = document.querySelector("#correo");
-  const edad = document.querySelector("#edad");
-  const personaje = document.querySelector("#personaje");
-  const temporada = document.querySelector("#temporada");
-  const opinion = document.querySelector("#opinion");
-  const reglas = document.querySelector("#reglas");
-   const carnet = document.querySelector("#carnet");
-   const vista = document.querySelector("#vista");
-   
-  personaje.addEventListener("change", function () {
-    if (personaje.value === "") {
-      vista.classList.add("oculto");
-    } else {
-      vista.src = "img/" + personaje.value + ".jpg";
-      vista.classList.remove("oculto");
-    }
-  });  
+    const nombre = document.querySelector("#nombre");
+    const correo = document.querySelector("#correo");
+    const edad = document.querySelector("#edad");
+    const personaje = document.querySelector("#personaje");
+    const temporada = document.querySelector("#temporada");
+    const opinion = document.querySelector("#opinion");
+    const reglas = document.querySelector("#reglas");
 
-  function revisar(campo, estaBien, textoError) {
-    const aviso = document.querySelector("#error-" + campo.id);
-    if (estaBien) {
-      campo.classList.remove("mal");
-      campo.classList.add("bien");
-      aviso.textContent = "";
-    } else {
-      campo.classList.remove("bien");
-      campo.classList.add("mal");
-      aviso.textContent = textoError;
-    }
-    return estaBien;
-  }
+    const carnet = document.querySelector("#carnet");
+    const vista = document.querySelector("#vista");
+    const registro = document.querySelector("#registro");
 
-  formularioClub.addEventListener("submit", function (e) {
-    e.preventDefault();  
-
-    let todoBien = true;
-    if (revisar(nombre, nombre.value.trim().length >= 3, "Escribe al menos 3 letras.") === false) { todoBien = false; }
-    if (revisar(correo, correo.value.includes("@") && correo.value.includes("."), "Escribe un correo válido.") === false) { todoBien = false; }
-    if (revisar(edad, edad.value >= 10 && edad.value <= 99, "La edad debe estar entre 10 y 99.") === false) { todoBien = false; }
-    if (revisar(personaje, personaje.value !== "", "Elige un personaje.") === false) { todoBien = false; }
-    if (revisar(temporada, temporada.value !== "", "Elige una temporada.") === false) { todoBien = false; }
-    if (revisar(opinion, opinion.value.trim().length >= 10, "Cuéntanos al menos 10 caracteres.") === false) { todoBien = false; }
-    if (revisar(reglas, reglas.checked, "Debes aceptar las reglas del club.") === false) { todoBien = false; }
-
-    if (todoBien === false) {
-      Swal.fire({
-        icon: "error",
-        title: "Revisa el formulario",
-        text: "Hay campos marcados en rojo.",
-        background: "#1b2a41",
-        color: "#f2f2f2",
-        confirmButtonColor: "#e1202b"
-      });
-      return;
+    if (!carnet || !registro) {
+        console.error(
+            "No se encontró #carnet o #registro. Revisa los IDs del HTML."
+        );
     }
 
-    const marcados = document.querySelectorAll("input[name='gustos']:checked");
-    let gustos = "";
-    for (let i = 0; i < marcados.length; i++) {
-      if (i > 0) {
-        gustos = gustos + ", ";
-      }
-      gustos = gustos + marcados[i].value;
-    }
-    if (gustos === "") {
-      gustos = "Sin elegir";
+    if (personaje && vista) {
+        personaje.addEventListener("change", function () {
+            if (personaje.value === "") {
+                vista.classList.add("oculto");
+                vista.removeAttribute("src");
+            } else {
+                vista.src = "img/" + personaje.value + ".jpg";
+                vista.classList.remove("oculto");
+            }
+        });
     }
 
-    const nombrePersonaje = personaje.options[personaje.selectedIndex].text;
-    carnet.innerHTML =
-      '<img class="foto-carnet" src="img/' + personaje.value + '.jpg" alt="' + nombrePersonaje + '">' +
-      "<h2>Club Hellfire</h2>" +
-      '<p class="nombre-carnet">' + nombre.value.trim() + "</p>" +
-      "<p>Personaje: " + nombrePersonaje + "</p>" +
-      "<p>Favorita: " + temporada.value + "</p>" +
-      "<p>Gustos: " + gustos + "</p>";
-  
-    Swal.fire({
-      icon: "success",
-      title: "¡Bienvenido al Club Hellfire!",
-      text: nombre.value.trim() + ", ya eres parte del club.",
-      background: "#1b2a41",
-      color: "#f2f2f2",
-      confirmButtonColor: "#e1202b"
+    function revisar(campo, estaBien, textoError) {
+        const aviso = document.querySelector("#error-" + campo.id);
+
+        campo.classList.toggle("bien", estaBien);
+        campo.classList.toggle("mal", !estaBien);
+
+        if (aviso) {
+            aviso.textContent = estaBien ? "" : textoError;
+        }
+
+        return estaBien;
+    }
+
+    formularioClub.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!carnet || !registro) {
+            alert("Error: revisa los elementos carnet y registro en el HTML.");
+            return;
+        }
+
+        let todoBien = true;
+
+        if (!revisar(
+            nombre,
+            nombre.value.trim().length >= 3,
+            "Escribe al menos 3 letras."
+        )) todoBien = false;
+
+        if (!revisar(
+            correo,
+            correo.validity.valid && correo.value.trim() !== "",
+            "Escribe un correo válido."
+        )) todoBien = false;
+
+        if (!revisar(
+            edad,
+            edad.value !== "" &&
+            Number(edad.value) >= 10 &&
+            Number(edad.value) <= 99,
+            "La edad debe estar entre 10 y 99."
+        )) todoBien = false;
+
+        if (!revisar(
+            personaje,
+            personaje.value !== "",
+            "Elige un personaje."
+        )) todoBien = false;
+
+        if (!revisar(
+            temporada,
+            temporada.value !== "",
+            "Elige una temporada."
+        )) todoBien = false;
+
+        if (!revisar(
+            opinion,
+            opinion.value.trim().length >= 10,
+            "Cuéntanos al menos 10 caracteres."
+        )) todoBien = false;
+
+        if (!revisar(
+            reglas,
+            reglas.checked,
+            "Debes aceptar las reglas del club."
+        )) todoBien = false;
+
+        const marcados = document.querySelectorAll(
+            'input[name="gustos"]:checked'
+        );
+
+        const avisoGustos = document.querySelector("#error-gustos");
+
+        if (marcados.length === 0) {
+            if (avisoGustos) {
+                avisoGustos.textContent = "Elige al menos una opción.";
+            }
+            todoBien = false;
+        } else if (avisoGustos) {
+            avisoGustos.textContent = "";
+        }
+
+        if (!todoBien) {
+            Swal.fire({
+                icon: "error",
+                title: "Revisa el formulario",
+                text: "Hay campos que necesitan tu atención.",
+                background: "#1b2a41",
+                color: "#f2f2f2",
+                confirmButtonColor: "#e1202b"
+            });
+            return;
+        }
+
+        const gustos = Array.from(marcados)
+            .map(function (opcion) {
+                return opcion.value;
+            })
+            .join(", ");
+
+        const nombreCompleto = nombre.value.trim();
+        const nombrePersonaje =
+            personaje.options[personaje.selectedIndex].text;
+
+        carnet.innerHTML = `
+            <h2>Tu carnet</h2>
+            <div class="contenido-carnet">
+                <img
+                    class="foto-carnet"
+                    src="img/${personaje.value}.jpg"
+                    alt="${nombrePersonaje}"
+                >
+                <h2>Club Hellfire</h2>
+                <p class="nombre-carnet">${nombreCompleto}</p>
+                <p>Personaje: ${nombrePersonaje}</p>
+                <p>Temporada favorita: ${temporada.value}</p>
+                <p>Gustos: ${gustos}</p>
+                <p class="frase-carnet">Miembro oficial del Club Hellfire</p>
+                <button
+                    type="button"
+                    id="boton-nuevo"
+                    class="boton-rojo"
+                >
+                    Unir un nuevo miembro
+                </button>
+            </div>
+        `;
+
+        registro.classList.add("oculto");
+        carnet.classList.remove("oculto");
+
+        Swal.fire({
+            icon: "success",
+            title: "¡Bienvenido al Club Hellfire!",
+            text: nombreCompleto + ", ya eres parte del club.",
+            background: "#1b2a41",
+            color: "#f2f2f2",
+            confirmButtonColor: "#e1202b"
+        });
+
+        const fotoCarnet = carnet.querySelector(".foto-carnet");
+
+        fotoCarnet.addEventListener("error", function () {
+            console.error(
+                "No se pudo cargar la imagen: " + fotoCarnet.src
+            );
+        });
+
+        formularioClub.reset();
+
+        if (vista) {
+            vista.classList.add("oculto");
+            vista.removeAttribute("src");
+        }
+
+        formularioClub.querySelectorAll(".bien, .mal").forEach(
+            function (campo) {
+                campo.classList.remove("bien", "mal");
+            }
+        );
+
+        document.querySelector("#boton-nuevo").addEventListener(
+            "click",
+            function () {
+                carnet.classList.add("oculto");
+                registro.classList.remove("oculto");
+            }
+        );
     });
-
-    formularioClub.reset();
-    const verdes = document.querySelectorAll(".bien");
-    for (let i = 0; i < verdes.length; i++) {
-      verdes[i].classList.remove("bien");
-    }
-  });
 }

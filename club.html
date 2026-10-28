@@ -51,6 +51,7 @@
         <div class="row">
           <div class="col-lg-7">
             <h2 class="titulo-seccion">Registro de fans</h2>
+            <div id="registro">
             <form id="formulario-club">
               <div class="row">
                 <div class="col-md-6">
@@ -116,6 +117,7 @@
                   <label class="opcion"><input type="checkbox" name="gustos" value="Monstruos"> Monstruos</label>
                   <label class="opcion"><input type="checkbox" name="gustos" value="Música de los 80"> Música de los 80</label>
                   <label class="opcion"><input type="checkbox" name="gustos" value="Amistad"> Amistad</label>
+                   <p id="error-gustos" class="error"></p>
                 </div>
                 <div>
                   <label for="opinion">¿Por qué te gusta la serie?</label>
@@ -131,13 +133,14 @@
                 </div>
               </div>
             </form>
+            </div>
           </div>
-                    <div class="col-lg-5">
-            <div id="carnet" class="carnet">
+                   
+            <div  id="carnet" class="carnet oculto">
               <h2>Tu carnet</h2>
               <p>Cuando completes el registro, tu carnet del Club Hellfire aparecerá aquí.</p>
             </div>
-          </div>
+        
         </div>
       </div>
     </section>
