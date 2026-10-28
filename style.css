@@ -3,6 +3,7 @@ body {
   background-color: #0b0b12;
   background-image: linear-gradient(rgba(11, 11, 18, 0.82), rgba(11, 11, 18, 0.92)), url("img/portada2.jpg");
   background-size: cover;
+  font-size: 0.9rem;
   background-position: center;
   background-attachment: fixed;
   color: #f2f2f2;
@@ -609,6 +610,9 @@ label {
 
 /*responsivo xd*/
 @media (min-width: 768px) {
+     body { 
+        font-size: 1rem;
+     }
   .menu {
      flex-direction: row;
       justify-content: space-between;
