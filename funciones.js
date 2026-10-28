@@ -114,6 +114,7 @@ if (formularioClub) {
   const temporada = document.querySelector("#temporada");
   const opinion = document.querySelector("#opinion");
   const reglas = document.querySelector("#reglas");
+   const carnet = document.querySelector("#carnet");
 
   function revisar(campo, estaBien, textoError) {
     const aviso = document.querySelector("#error-" + campo.id);
@@ -153,12 +154,27 @@ if (formularioClub) {
       return;
     }
 
+    const marcados = document.querySelectorAll("input[name='gustos']:checked");
+    let gustos = "";
+    for (let i = 0; i < marcados.length; i++) {
+      if (i > 0) {
+        gustos = gustos + ", ";
+      }
+      gustos = gustos + marcados[i].value;
+    }
+    if (gustos === "") {
+      gustos = "Sin elegir";
+    }
+
+    const nombrePersonaje = personaje.options[personaje.selectedIndex].text;
+    carnet.innerHTML =
+      '<img class="foto-carnet" src="img/' + personaje.value + '.jpg" alt="' + nombrePersonaje + '">' +
+      "<h2>Club Hellfire</h2>" +
+      '<p class="nombre-carnet">' + nombre.value.trim() + "</p>" +
+      "<p>Personaje: " + nombrePersonaje + "</p>" +
+      "<p>Favorita: " + temporada.value + "</p>" +
+      "<p>Gustos: " + gustos + "</p>";
   
-
-
-
-
-
     Swal.fire({
       icon: "success",
       title: "¡Bienvenido al Club Hellfire!",
