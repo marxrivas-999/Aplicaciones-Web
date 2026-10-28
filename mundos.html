@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stranger Things - Mundos</title>
+  <title>Stranger Things - Club Helfire</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600&family=Special+Elite&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,9 +18,9 @@
       <ul class="enlaces">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="personajes.html">Personajes</a></li>
-        <li><a href="temporadas.html">Temporadas</a></li>
+        <li><a href="temporadas.html" >Temporadas</a></li>
         <li><a href="mundos.html" class="activo">Mundos</a></li>
-        <li><a href="club.html">Club</a></li>
+        <li><a href="club.html" >Club</a></li>
       </ul>
     </nav>
   </header>
@@ -41,7 +41,51 @@
     <span class="rosa"></span>
   </div>
   <main>
-    <h1>Mundos</h1>
+  <section class="encabezado">
+      <h1 class="titulo">Los Mundos</h1>
+    </section>
+
+    <section class="seccion">
+      <div class="container">
+
+        <article id="hawkins" class="mundo">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2 class="titulo-seccion">Hawkins, el mundo normal</h2>
+              <p>Hawkins es un pueblo ficticio de Indiana en los años 80: bicicletas, salas de arcade, la escuela y el centro comercial. Parece tranquilo, pero a las afueras hay un laboratorio del gobierno que hace experimentos secretos. Es el punto de partida de toda la serie y el lugar que los héroes quieren proteger.</p>
+            </div>
+            <div class="col-md-6">
+              <img class="foto-mundo" src="img/hawkins.jpg" alt="Hawkins">
+            </div>
+          </div>
+        </article>
+
+        <article id="upsidedown" class="mundo">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2 class="titulo-seccion">El Upside Down (El Mundo del Revés)</h2>
+              <p>Es una dimensión paralela y oscura, un reflejo deformado de Hawkins. Está cubierta de esporas, vides y niebla, y su aire es tóxico. Parece detenida en el tiempo, en noviembre de 1983. Ahí viven el Demogorgon, los Demoperros y el Mind Flayer. Se conecta con nuestro mundo mediante portales que se abrieron por los experimentos del Laboratorio.</p>
+            </div>
+            <div class="col-md-6">
+              <img class="foto-mundo" src="img/upsidedown.jpg" alt="Upside Down">
+            </div>
+          </div>
+        </article>
+
+        <article id="dimensionx" class="mundo">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2 class="titulo-seccion">La Dimensión X</h2>
+              <p>Es la idea de que existen otras dimensiones paralelas a la nuestra, espacios a los que no se llega con los sentidos normales. En la serie, los chicos aprenden este concepto de su profesor de ciencias, y les sirve para entender qué es el Upside Down: el ejemplo real de dimensión alterna que ellos descubren.</p>
+            </div>
+            <div class="col-md-6">
+              <img class="foto-mundo" src="img/dimensionx.jpg" alt="Dimensión X">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
   </main>
 
   <footer class="pie">
@@ -55,4 +99,3 @@
   <script src="funciones.js"></script>
 </body>
 </html>
-

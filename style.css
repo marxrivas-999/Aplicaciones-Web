@@ -437,6 +437,34 @@ a {
   height: 100%;
   object-fit: cover;
 }
+.mundo {
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 2px solid #1b2a41;
+  border-radius: 10px;
+}
+#hawkins {
+  background-image: linear-gradient(#2a1a1c, #0b0b12);
+  border-color: #f2b134;
+}
+#upsidedown {
+  background-image: linear-gradient(#0a1a33, #03060d);
+  border-color: #4aa3ff;
+}
+#dimensionx {
+  background-image: linear-gradient(#3a0a0f, black);
+  border-color: #e1202b;
+}
+.foto-mundo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #e1202b;
+  border-radius: 8px;
+}
+
 
 /*responsivo xd*/
 @media (min-width: 768px) {
