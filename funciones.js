@@ -86,3 +86,20 @@ if (pared) {
     });
   }
 }
+
+const botonesMundo = document.querySelectorAll(".boton-mundo");
+const mundos = document.querySelectorAll(".mundo");
+
+for (let i = 0; i < botonesMundo.length; i++) {
+  botonesMundo[i].addEventListener("click", function () {
+    for (let j = 0; j < botonesMundo.length; j++) {
+      botonesMundo[j].classList.remove("activo");
+    }
+    for (let j = 0; j < mundos.length; j++) {
+      mundos[j].classList.add("oculto");
+    }
+    botonesMundo[i].classList.add("activo");
+    const id = botonesMundo[i].getAttribute("data-mundo");
+    document.querySelector("#" + id).classList.remove("oculto");
+  });
+}
