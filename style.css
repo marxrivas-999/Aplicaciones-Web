@@ -261,8 +261,6 @@ a {
 .rosa {
      background-color: #ff5fa8;
      }
-
-
 @keyframes brillar {
   from { 
     opacity: 0.5; }
@@ -278,6 +276,69 @@ a {
 }
 .pie p {
   margin: 0;
+}
+.row {
+  justify-content: center;
+}
+
+.encabezado {
+  padding: 20px 10px;
+  text-align: center;
+  background-image: linear-gradient(rgba(11, 11, 18, 0.6), rgba(11, 11, 18, 0.9)), url("img/hawkins.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.atajos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.atajos a {
+  padding: 4px 14px;
+  border: 2px solid #e1202b;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.atajos a:hover {
+  background-color: #e1202b;
+}
+.personaje {
+  height: 100%;
+  overflow: hidden;
+  background-color: #0b0b12;
+  border: 1px solid #2c3d5a;
+  border-radius: 8px;
+}
+.personaje:hover {
+  border-color: #e1202b;
+  box-shadow: 0 0 18px #e1202b;
+}
+.personaje img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: top;
+}
+.texto-personaje {
+  padding: 10px;
+}
+.texto-personaje h3 {
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+.texto-personaje p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.texto-personaje .actor {
+  margin-bottom: 5px;
+  font-family: "Special Elite", monospace;
+  color: #f2b134;
 }
 
 
@@ -344,5 +405,11 @@ a {
      }  
   .pie { 
     font-size: 0.95rem; 
-}       
+}      
+  .personaje img { 
+    height: 250px; }
+  .texto-personaje h3 { 
+    font-size: 1.15rem; }
+  .texto-personaje p {
+     font-size: 0.9rem; } 
 } 
