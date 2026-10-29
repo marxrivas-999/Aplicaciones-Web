@@ -1,5 +1,3 @@
-AOS.init({ duration: 700, once: true });
-
 const pared = document.querySelector("#pared");
 
 if (pared) {
