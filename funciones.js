@@ -112,9 +112,6 @@ if (formularioClub) {
     const edad = document.querySelector("#edad");
     const personaje = document.querySelector("#personaje");
     const temporada = document.querySelector("#temporada");
-    const opinion = document.querySelector("#opinion");
-    const reglas = document.querySelector("#reglas");
-
     const carnet = document.querySelector("#carnet");
     const vista = document.querySelector("#vista");
     const registro = document.querySelector("#registro");
@@ -192,17 +189,6 @@ if (formularioClub) {
             "Elige una temporada."
         )) todoBien = false;
 
-        if (!revisar(
-            opinion,
-            opinion.value.trim().length >= 10,
-            "Cuéntanos al menos 10 caracteres."
-        )) todoBien = false;
-
-        if (!revisar(
-            reglas,
-            reglas.checked,
-            "Debes aceptar las reglas del club."
-        )) todoBien = false;
 
         const marcados = document.querySelectorAll(
             'input[name="gustos"]:checked'
